@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+        <title>Page title</title>
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- External CSS -->
+        <link rel="stylesheet" href="code-guide.css">
+        <!-- JavaScript -->
+        <script src="code-guide.js"></script>
+        <!-- In-document CSS -->
+        <style>
+            /* ... */
+            <!-- 语法 -->
+            /* Bad CSS */
+            .selector, .selector-secondary, .selector[type=text] {
+                padding:15px;
+                margin:0px 0px 15px;
+                background-color:rgba(0, 0, 0, 0.5);
+                box-shadow:0px 1px 2px #CCC,inset 0 1px 0 #FFFFFF
+            }
+            /* Good CSS */
+            .selector,
+            .selector-secondary,
+            .selector[type="text"] {
+                padding: 15px;
+                margin-bottom: 15px;
+                background-color: rgba(0,0,0,.5);
+                box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
+            }
+
+            <!-- 声明顺序 -->
+            .declaration-order {
+                /* Positioning */
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 100;
+
+                /* Box-model */
+                display: block;
+                float: right;
+                width: 100px;
+                height: 100px;
+
+                /* Typography */
+                font: normal 13px "Helvetica Neue", sans-serif;
+                line-height: 1.5;
+                color: #333;
+                text-align: center;
+
+                /* Visual */
+                background-color: #f5f5f5;
+                border: 1px solid #e5e5e5;
+                border-radius: 3px;
+
+                /* Misc */
+                opacity: 1;
+            }
+
+            <!-- 媒体查询（Media query）的位置 -->
+            .element { ... }
+            .element-avatar { ... }
+            .element-selected { ... }
+            @media (min-width: 480px) {
+                .element { ...}
+                .element-avatar { ... }
+                .element-selected { ... }
+            }
+
+            <!-- 带前缀的属性 -->
+            /* Prefixed properties */
+            .selector {
+                -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                        box-shadow: 0 1px 2px rgba(0,0,0,.15);
+            }
+
+            <!-- 单行规则声明 -->
+            /* Single declarations on one line */
+            .span1 { width: 60px; }
+            .span2 { width: 140px; }
+            .span3 { width: 220px; }
+            /* Multiple declarations, one per line */
+            .sprite {
+                display: inline-block;
+                width: 16px;
+                height: 15px;
+                background-image: url(../img/sprite.png);
+            }
+            .icon           { background-position: 0 0; }
+            .icon-home      { background-position: 0 -20px; }
+            .icon-account   { background-position: 0 -40px; }
+
+            <!-- 简写形式的属性声明 -->
+            /* Bad example */
+            .element {
+                margin: 0 0 10px;
+                background: red;
+                background: url("image.jpg");
+                border-radius: 3px 3px 0 0;
+            }
+            /* Good example */
+            .element {
+                margin-bottom: 10px;
+                background-color: red;
+                background-image: url("image.jpg");
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+            }
+
+            <!-- Less 和 Sass 中的嵌套 -->
+            /* Without nesting */
+            .table > thead > tr > th { … }
+            .table > thead > tr > td { … }
+            /* With nesting */
+            .table > thead > tr {
+                > th { … }
+                > td { … }
+            }
+
+            <!-- Less 和 Sass 中的操作符 -->
+            /* Bad example */
+            .element {
+               margin: 10px 0 @variable*2 10px;
+            }
+            /* Good example */
+            .element {
+               margin: 10px 0 (@variable * 2) 10px;
+            }
+
+            <!-- 注释 -->
+            /* Bad example */
+            /* Modal header */
+            .modal-header {
+                ...
+            }
+            /* Good example */
+            /* Wrapping element for .modal-title and .modal-close */
+            .modal-header {
+                ...
+            }
+
+            <!-- class 命名 -->
+            /* Bad example */
+            .t { ... }
+            .red { ... }
+            .header { ... }
+            /* Good example */
+            .tweet { ... }
+            .important { ... }
+            .tweet-header { ... }
+
+            <!-- 选择器 -->
+            /* Bad example */
+            span { ... }
+            .page-container #stream .stream-item .tweet .tweet-header .username { ... }
+            .avatar { ... }
+            /* Good example */
+            .avatar { ... }
+            .tweet-header .username { ... }
+            .tweet .avatar { ... }
+
+            <!-- 代码组织 -->
+            /*
+             * Component section heading
+             */
+            .element { ... }
+            /*
+             * Component section heading
+             *
+             * Sometimes you need to include optional context for the entire component. Do that up here if it's important enough.
+             */
+            .element { ... }
+            /* Contextual sub-component or modifer */
+            .element-heading { ... }
+        </style>
+
+        <!-- 不要使用 @import -->
+        <!-- Use link elements -->
+        <link rel="stylesheet" href="core.css">
+        <!-- Avoid @imports -->
+        <style>
+            @import url("more.css");
+        </style>
+
+
+    </head>
+    <body>
+        <!-- 属性顺序 -->
+        <a class="..." id="..." data-toggle="modal" href="#">
+            Example link
+        </a>
+        <input class="form-control" type="text">
+        <img src="..." alt="...">
+        <!-- 布尔（boolean）型属性 -->
+        <input type="text" disabled>
+        <input type="checkbox" value="1" checked>
+        <select>
+            <option value="1" selected>1</option>
+        </select>
+
+        <!-- 减少标签的数量 -->
+        <!-- Not so great -->
+        <span class="avatar">
+            <img src="...">
+        </span>
+        <!-- Better -->
+        <img class="avatar" src="...">
+
+
+        <img src="images/company-logo.png" alt="Company">
+        <h1 class="hello-world">Hello, world!</h1>
+    </body>
+</html>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
