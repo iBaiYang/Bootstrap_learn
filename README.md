@@ -10,18 +10,18 @@ Bootstrap中文网: http://www.bootcss.com/
 Bootstrap菜鸟参考手册：https://www.runoob.com/bootstrap/bootstrap-tutorial.html
 
 
-bootstrap快速入门
+bootstrap快速入门 (袁三日yuansanri)
 http://www.imooc.com/learn/826
 
-玩转Bootstrap（基础）
+玩转Bootstrap（基础） (大漠damo)
 http://www.imooc.com/learn/141
 
-基于bootstrap的网页开发
+基于bootstrap的网页开发 (姜维wayne)
 http://www.imooc.com/learn/182
 
-玩转Bootstrap（JS插件篇）
+玩转Bootstrap（JS插件篇） (大漠damo2)
 http://www.imooc.com/learn/262
 
-响应式布局
+响应式布局 (远人yuanren)
 http://www.imooc.com/learn/41
 
