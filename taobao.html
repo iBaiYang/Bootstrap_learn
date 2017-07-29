@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <title>淘宝移动端视图解决方案</title>
+
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 手机淘宝参考
+    var metaEL = doc.createElement('meta');
+    var scale = isRetina ? 0.5 : 1;
+    metaEl.setAttribute('name', 'viewport');
+    metaEl.setAttribute('content', 'initinal-scale=' + scale + ', maxinum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+    if ( docEl.firstElementChild ) {
+        document.documentElement.firstElementChild.appendChild(metaEl);
+    } else {
+        var wrap = doc.createElement('div');
+        wrap.appendChild(metaEL);
+        document.write(wrap.innerHTML);
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
